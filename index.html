@@ -1,0 +1,83 @@
+<html>
+	<head>
+		<title>PHP Database Admin</title>
+
+		<!--Script Imports-->
+		<script type="text/javascript" src="/lib/jquery-1.8.2.min.js"></script>
+		<script type="text/javascript" src="/js/init.js"></script>
+		<script type="text/javascript" src="/js/ajax.js"></script>
+
+
+		<!--Style Imports-->
+		<link rel="stylesheet" type="text/css" href="/css/style.css"></style>
+	</head>
+	
+
+	<body>
+		<div id="header" class="green">
+			<h1>PHP Database Admin</h1>
+		</div>
+
+		<div id="navbar">
+			<ul class="list">
+				<li class="admin"  div="admin">Admin</li>
+				<li class="input"  div="inputs">Input</li>
+				<li class="listDB" div="lists">List</li>
+				</div>
+
+		<div id="main_content">
+
+			<!--Loading Spinner-->
+			<span class="loader"><img src="/images/loading.gif"/></span>
+
+			<!--Admin Page================================-->
+			<div class="admin page">
+				<h2>Setup Database Variables</h2><br/>
+				<form class="form" action="" method="post">
+					<label for="username">Username</label>
+					<input type="text" name="username"/>
+					<br/>
+					<label for="password">Password</label>
+					<input type="password" name="password"/>
+					<br/>
+					<button class="submit green" type="submit">Save</button>
+				</form>
+			</div>
+			<!--END Admin Page============================-->
+
+
+			<!--Input Page================================-->
+			<div class="inputs page">
+				<h2>Insert Entry in Database</h2><br/>
+				<form class="form" method="post">
+					<label for="firstname">First Name</label>
+					<input type="text" name="fname"/>
+					<br/>
+					<label for="lastname">Last Name</label>
+					<input type="text" name="lname" />
+					<br/>
+					<label for="email">Email</label>
+					<input type="text" name="email"/>
+					<br/>
+					<button class="submit green" type="submit" onclick="return insertEntry(form)">Submit</button>
+				</form>
+				<span id="insertMessage" class="message"></span>
+			</div>
+			<!--END Input page===========================-->
+
+			<!--List Page================================-->
+			<div class="lists page">
+				<h2>Call a Select statement</h2><br/>
+				<form class="form" action="index.php" method="post">
+
+					<button class="submit green" type="submit" onclick="return listEntries()">Refresh</button>
+				</form>
+				<span id="listMessage" class="message"></span>
+			</div>
+			<!--END List Page============================-->
+		</div>
+
+		<div id="footer"></div>
+
+	</body>
+</html>

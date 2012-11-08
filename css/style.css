@@ -1,0 +1,121 @@
+* {
+	padding 	: 0 0 0 0;
+	margin		: 0 0 0 0;
+	font-family	: Verdana;
+	font-size	: 12px;  
+}
+
+#header {
+	height 			: 100px;
+	width 			: 80%;
+	margin-left		: auto;
+	margin-right	: auto;
+	border-radius	: 10px;
+	box-shadow		: 2px 2px 5px;   
+}
+
+#header h1 {
+	position 		: relative; 
+	margin-left		: 35%;
+	margin-right	: auto;
+	top 			: 40px;
+	display			: block;
+	color			: #fff;
+	font-size		: 20px;
+	font-family		: Arial;  
+}
+
+#main_content { 
+	min-height 		: 200px; 
+	height 			: auto; 
+	width			: 80%;
+	padding-top 	: 10px;
+	padding-bottom	: 20px;  
+	margin-left		: auto;
+	margin-right	: auto;
+	background-image: linear-gradient(bottom, rgb(228,235,228) 0%, rgb(255,255,255) 63%);
+	background-image: -o-linear-gradient(bottom, rgb(228,235,228) 0%, rgb(255,255,255) 63%);
+	background-image: -moz-linear-gradient(bottom, rgb(228,235,228) 0%, rgb(255,255,255) 63%);
+	background-image: -webkit-linear-gradient(bottom, rgb(228,235,228) 0%, rgb(255,255,255) 63%);
+	background-image: -ms-linear-gradient(bottom, rgb(228,235,228) 0%, rgb(255,255,255) 63%);
+	box-shadow 		: 2px 2px 5px; 
+	border-radius 	: 10px;
+	border-top 		: 1px solid #000;
+}
+
+.green {
+	background-image: linear-gradient(bottom, rgb(29,120,35) 25%, rgb(11,209,57) 63%);
+	background-image: -o-linear-gradient(bottom, rgb(29,120,35) 25%, rgb(11,209,57) 63%);
+	background-image: -moz-linear-gradient(bottom, rgb(29,120,35) 25%, rgb(11,209,57) 63%);
+	background-image: -webkit-linear-gradient(bottom, rgb(29,120,35) 25%, rgb(11,209,57) 63%);
+	background-image: -ms-linear-gradient(bottom, rgb(29,120,35) 25%, rgb(11,209,57) 63%);
+}
+
+#navbar {
+	position		: relative;
+	top 			: 3px;
+	width 			: 80%;
+	height 			: 20px;
+	margin-top 		: 30px;
+	margin-right	: auto; 
+	margin-left 	: auto;
+	padding-left	: 20px; 
+	-webkit-touch-callout	: none;
+	-webkit-user-select		: none;
+	-khtml-user-select		: none;
+	-moz-user-select		: none;
+	-ms-user-select			: none;
+	user-select 			: none; 
+}
+#navbar .list li{
+	display			: inline;
+	background-color: #D3D3D3;
+	border  		: 1px solid #000;
+	border-bottom	: 0px;
+	border-radius-top: 10px;
+	padding 		: 5px;
+}
+#navbar .list .active {
+	z-index 		: 10; 
+	background-color: #fff;
+}
+
+.page {
+	padding 	: 20px;
+}
+.form .submit {
+	margin-top		: 5px;
+	height 			: 25px;
+	width 			: 100px;
+	font-family		: Verdana;
+	background-color: green;
+	color 			: #fff; 
+	border-radius	: 5px;
+	border 			: none;
+}
+.form .submit:active {
+	background-image: none; 
+}
+
+.form label {
+	float		: left;
+	clear 		: left;
+	font-size 	: 10px;
+	font-family : Verdana;
+}
+.form input, .form button {
+	float		: left;
+	clear 		: left;
+}
+
+.message {
+	display 		: block; 
+	margin-left 	: 60%;  
+	vertical-align 	: top;
+}
+
+.loader {
+	display		: none;
+	float 		: right;
+	margin 		: 50px 100px 0 0;
+}
