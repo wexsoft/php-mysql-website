@@ -33,3 +33,12 @@ function validate(form){
 		}
 	}
 }
+
+function bindEvents(){
+  $('.row').on('click',function(e){
+    var target = $(e.currentTarget);
+    $('#details').toggle();
+    $('#mask').toggle();
+    $('#details').find('#Name').val(target.find('#Name').text());
+  });
+}

@@ -14,7 +14,7 @@ function insertEntry(htmlForm){
 	var loader 		= $('.loader');
 	var self 		= this;
 	var form		= $(htmlForm);
-	var inputs 		= form.children('input');
+	var inputs 		= form.find('input');
 	var inputValues	= [];
 	var reqString 	= '';
 
@@ -34,7 +34,7 @@ function insertEntry(htmlForm){
 			loader.hide();
 		}
 	}
-
+  console.log('REQ', reqString);
 	xmlhttp.open("POST","insert.php",true);
 	xmlhttp.setRequestHeader('Content-type','application/x-www-form-urlencoded');
 	xmlhttp.send(reqString);
@@ -48,12 +48,28 @@ function listEntries(){
 	xmlhttp=new XMLHttpRequest();
 	xmlhttp.onreadystatechange=function(){
 		if (xmlhttp.readyState==4 && xmlhttp.status==200){
-			document.getElementById("listMessage").innerHTML=xmlhttp.responseText;
+      var listText = parseList(xmlhttp.responseText);
+			document.getElementById("listMessage").innerHTML=listText;
 			loader.hide();
+      bindEvents();
 		}
 	}
 
-	xmlhttp.open("GET","list.php",true);
+	xmlhttp.open("GET","php/list.php",true);
 	xmlhttp.setRequestHeader('Content-type','application/x-www-form-urlencoded');
 	xmlhttp.send();
 }
+
+function parseList(text){
+  text = JSON.parse(text);
+  text.pop();
+  
+  var returnStr ='';
+  for(var i=0;i<text.length;i++){
+    var item = text[i];
+    returnStr += "<div class='row' data-id='"+item.recId+"'><span id='Name'>"+item.Name+"</span><span id='SortOrder'>"+item.SortOrder+"</span><span id='Active'>"+item.Active+"</span></div>";
+  }
+  console.log(text);
+  return returnStr;
+}
+  

@@ -13,8 +13,8 @@ $output = "";
 
 while($row = mysql_fetch_array($result))
   {
-  $output .= $row['fname'] . " " . $row['lname'] . " " . $row['email'];
-  $output .= "<br />";
+  $output .= $row['fname'] . " " . $row['lname'] . "<SPAN>" . $row['email'] . "<SPAN>" . $row['dob'];
+  $output .= "ROWEND";
   }
 
 if($output == ""){

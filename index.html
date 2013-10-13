@@ -3,13 +3,13 @@
 		<title>PHP Database Admin</title>
 
 		<!--Script Imports-->
-		<script type="text/javascript" src="/lib/jquery-1.8.2.min.js"></script>
-		<script type="text/javascript" src="/js/init.js"></script>
-		<script type="text/javascript" src="/js/ajax.js"></script>
+		<script type="text/javascript" src="lib/jquery-1.8.2.min.js"></script>
+		<script type="text/javascript" src="js/init.js"></script>
+		<script type="text/javascript" src="js/ajax.js"></script>
 
 
 		<!--Style Imports-->
-		<link rel="stylesheet" type="text/css" href="/css/style.css"></style>
+		<link rel="stylesheet" type="text/css" href="css/style.css"></style>
 	</head>
 	
 
@@ -50,15 +50,24 @@
 			<div class="inputs page">
 				<h2>Insert Entry in Database</h2><br/>
 				<form class="form" method="post">
-					<label for="firstname">First Name</label>
-					<input type="text" name="fname"/>
-					<br/>
-					<label for="lastname">Last Name</label>
-					<input type="text" name="lname" />
-					<br/>
-					<label for="email">Email</label>
-					<input type="text" name="email"/>
-					<br/>
+					<table class="inputtable">
+					  <tr>
+              <th class="header">First Name</th>
+              <td><input class="text" type="text" name="fname"/></td>
+					  </tr>
+					  <tr>
+              <th class="header">Last Name</th>
+              <td><input class="text" type="text" name="lname"/></td>
+					  </tr>
+					  <tr>
+              <th class="header">Email</th>
+              <td><input class="text" type="text" name="email"/></td>
+					  </tr>
+					  <tr>
+              <th class="header">DOB</th>
+              <td><input class="text" type="text" name="dob"/></td>
+					  </tr>
+					</table>
 					<button class="submit green" type="submit" onclick="return insertEntry(form)">Submit</button>
 				</form>
 				<span id="insertMessage" class="message"></span>
@@ -67,7 +76,7 @@
 
 			<!--List Page================================-->
 			<div class="lists page">
-				<h2>Call a Select statement</h2><br/>
+				<h2>List contents of database</h2><br/>
 				<form class="form" action="index.php" method="post">
 
 					<button class="submit green" type="submit" onclick="return listEntries()">Refresh</button>
@@ -78,6 +87,14 @@
 		</div>
 
 		<div id="footer"></div>
+    
+    <div id="details" style="display:none;">
+      Name:<input id="Name"/><br/>
+      SortOrder:<input id="SortOrder"/><br/>
+      Active:<input type="checkbox" id="Active"/>
+    </div>
+    
+    <div id='mask'></div>
 
 	</body>
 </html>
